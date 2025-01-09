@@ -1,0 +1,12 @@
+name: wine-classifier
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - flask
+  - numpy
+  - scikit-learn
+  - joblib
+  - pip
+  - pip:
+      - flask
