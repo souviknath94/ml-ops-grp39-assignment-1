@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Bidisha/ml-ops-grp39-assignment-1/src/mlruns/563278693415267208/158903ac7f0a40bdb358d1323050f2b3/artifacts
+end_time: 1737656141377
+entry_point_name: ''
+experiment_id: '563278693415267208'
+lifecycle_stage: active
+run_id: 158903ac7f0a40bdb358d1323050f2b3
+run_name: sincere-hound-257
+run_uuid: 158903ac7f0a40bdb358d1323050f2b3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737656103607
+status: 3
+tags: []
+user_id: Bidisha
