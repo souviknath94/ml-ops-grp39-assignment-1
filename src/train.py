@@ -19,17 +19,9 @@ def train_model(model_name, model, param_grid):
         model (object): Model instance to train.
         param_grid (dict): Hyperparameter grid for the model.
     """
-    # Load dataset
-    data = load_wine()
-
-    # Convert to DataFrame
-    df = pd.DataFrame(data.data, columns=data.feature_names)
-    df['target'] = data.target
-
     # Save the dataset as a CSV file
-    dataset_path = r"C:\Users\Bidisha\ml-ops-grp39-assignment-1\data\wine_dataset.csv"
-    df.to_csv(dataset_path, index=False)
-    print(f"Dataset saved at: {dataset_path}")
+    dataset_path = "data/wine_dataset.csv"
+    df = pd.read_csv(dataset_path, index=False)
 
     # Split dataset
     X, y = df.drop(columns=['target']), df['target']

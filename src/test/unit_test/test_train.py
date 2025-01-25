@@ -1,5 +1,6 @@
 import unittest
-from src.train import train_model, predict
+from src.train import train_model
+from src.app import predict
 import joblib
 import os
 
