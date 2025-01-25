@@ -1,4 +1,2 @@
 [core]
-    remote = storage
-['remote "storage"']
-    url = ../../dvc-storage
+    autostage = true
