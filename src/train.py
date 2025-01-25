@@ -21,13 +21,15 @@ def train_model(model_name, model, param_grid):
     """
     # Save the dataset as a CSV file
     dataset_path = "data/wine_dataset.csv"
-    df = pd.read_csv(dataset_path, index=False)
+    df = pd.read_csv(dataset_path)
 
     # Split dataset
     X, y = df.drop(columns=['target']), df['target']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Start MLflow tracking
+    remote_server_uri="http://127.0.0.1:5000" 
+    mlflow.set_tracking_uri(remote_server_uri) 
     mlflow.set_experiment("Wine_Classification")
     with mlflow.start_run():
         # Perform Grid Search
@@ -64,24 +66,7 @@ if __name__ == "__main__":
     # Define models and their parameter grids
     models = [
         {
-            "name": "RandomForest",
-            "model": RandomForestClassifier(random_state=42),
-            "param_grid": {
-                'n_estimators': [50, 100, 150],
-                'max_depth': [5, 10, 20],
-                'min_samples_split': [2, 5, 10]
-            }
-        },
-        {
-            "name": "LogisticRegression",
-            "model": LogisticRegression(max_iter=500, random_state=42),
-            "param_grid": {
-                'C': [0.1, 1.0, 10],
-                'solver': ['lbfgs', 'liblinear']
-            }
-        },
-        {
-            "name": "SVM",
+            "name": "model",
             "model": SVC(random_state=42),
             "param_grid": {
                 'C': [0.1, 1.0, 10],
