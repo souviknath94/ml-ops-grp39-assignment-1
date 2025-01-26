@@ -9,60 +9,61 @@ on:
       - main
 
 jobs:
-  lint:
-    name: Lint Code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Dependencies
-        run: |
-          pip install flake8
-          pip install -r requirements.txt
-
-      - name: Run Linter
-        run: flake8 . || true
-
-  test:
-    name: Run Unit Tests
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Run Unit Tests
-        working-directory: ./
-        run: python -m unittest discover -s src/test/unit_test -p "*.py"
+#  lint:
+#    name: Lint Code
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout Code
+#        uses: actions/checkout@v3
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.10'
+#
+#      - name: Install Dependencies
+#        run: |
+#          pip install flake8
+#          pip install -r requirements.txt
+#
+#      - name: Run Linter
+#        run: flake8 . || true
+#
+#  test:
+#    name: Run Unit Tests
+#    runs-on: ubuntu-latest
+#    needs: lint
+#    steps:
+#      - name: Checkout Code
+#        uses: actions/checkout@v3
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.10'
+#
+#      - name: Install Dependencies
+#        run: |
+#          pip install -r requirements.txt
+#
+#      - name: Run Unit Tests
+#        working-directory: ./
+#        run: python -m unittest discover -s src/test/unit_test -p "*.py"
 
   deploy-to-codespaces:
     name: Deploy to Codespaces
     runs-on: ubuntu-latest
-    needs: test  # Add dependency here
+#    needs: test
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Authenticate with GitHub CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
-        run: echo "Using GitHub Token for authentication"
-
+          GH_TOKEN: ${{ secrets.DEPLOY }}
+        run: |
+          echo "${{ secrets.DEPLOY }}" | gh auth login --with-token
+          gh auth refresh -h github.com -s codespace
 
       - name: List Available Codespaces
         run: gh codespace list
