@@ -1,3 +1,4 @@
+import os
 import joblib
 import mlflow
 import mlflow.sklearn
@@ -24,9 +25,16 @@ def train_model(model_name, model, param_grid):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Start MLflow tracking
-    remote_server_uri="http://127.0.0.1:5000" 
-    mlflow.set_tracking_uri(remote_server_uri) 
-    mlflow.set_experiment("Wine_Classification")
+    project_root = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(project_root, "../..")  # Navigate to the root
+
+    # Define the artifacts directory relative to the project root
+    artifact_location = os.path.join(project_root, "artifacts")
+    mlflow.set_tracking_uri(f"file://{artifact_location}")
+    if not mlflow.get_experiment_by_name("wine classification"):
+        mlflow.create_experiment("classification", artifact_location=artifact_location)
+
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
     with mlflow.start_run():
         # Perform Grid Search
         grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy', verbose=0)
@@ -50,10 +58,10 @@ def train_model(model_name, model, param_grid):
         mlflow.log_metric("accuracy", accuracy)
 
         # Log the trained model
-        mlflow.sklearn.log_model(best_model, f"{model_name}_model")
+        mlflow.sklearn.log_model(best_model, f"model")
 
         # Save the model locally
-        joblib.dump(best_model, f"{model_name}_model.pkl")
+        joblib.dump(best_model, f"models/model.pkl")
 
         print(f"{model_name} trained. Best Parameters: {best_params}, Test Accuracy: {accuracy}")
 
