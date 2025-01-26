@@ -65,6 +65,8 @@ def train_model(model_name, model, param_grid):
 
         print(f"{model_name} trained. Best Parameters: {best_params}, Test Accuracy: {accuracy}")
 
+    return best_params, accuracy
+
 
 if __name__ == "__main__":
     # Define models and their parameter grids

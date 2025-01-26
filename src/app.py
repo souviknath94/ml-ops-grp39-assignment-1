@@ -8,13 +8,18 @@ app = Flask(__name__)
 model = joblib.load('models/model.pkl')
 
 
+def model_predict(features: np.array) -> np.array:
+    prediction = model.predict(features)
+    return prediction
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         # Get the data from the request
         data = request.get_json()
         features = np.array(data['features']).reshape(1, -1)
-        prediction = model.predict(features)
+        prediction = model_predict(features=features)
         return jsonify({'prediction': int(prediction[0])})
     except Exception as e:
         return jsonify({'error': str(e)})
