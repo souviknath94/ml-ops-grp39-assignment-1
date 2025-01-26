@@ -60,7 +60,7 @@ jobs:
 
       - name: Authenticate with GitHub CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.mlops-deploy }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY }}
         run: |
           gh auth login --with-token <<< $GITHUB_TOKEN
 
@@ -69,7 +69,7 @@ jobs:
 
       - name: Deploy Application to Codespace
         run: |
-          gh codespace ssh -c effective-engine -C "
+          gh codespace ssh -c mlops-deployment -C "
           cd /workspaces/ml-ops-grp39-assignment-1 &&
           docker build -t mlops-app:latest . &&
           docker run -d -p 5000:5000 mlops-app:latest
