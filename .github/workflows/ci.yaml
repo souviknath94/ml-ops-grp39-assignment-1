@@ -59,17 +59,21 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Dependencies
+      - name: Set up Docker
         run: |
-          pip install -r requirements.txt
-          pip install gunicorn
+          sudo apt-get update
+          sudo apt-get install -y docker.io
 
-      - name: Start Flask App in Codespaces
+      - name: Build Docker Image
         run: |
-          gunicorn --bind 0.0.0.0:5000 app:app &
-          echo "Application is running. Forward port 5000 to access it."
+          docker build -t mlops-app:latest .
+
+      - name: Run Docker Container
+        run: |
+          docker run -d -p 5000:5000 --name mlops-app mlops-app:latest
+          echo "Docker container is running on port 5000."
+
+      - name: Manual Port Forwarding Instructions
+        run: |
+          echo "The application is running in Docker on port 5000."
+          echo "Go to the Codespaces Ports tab and make port 5000 Public."
