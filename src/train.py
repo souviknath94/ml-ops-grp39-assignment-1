@@ -1,12 +1,8 @@
 import joblib
-import numpy as np
 import mlflow
 import mlflow.sklearn
 import pandas as pd
-from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
