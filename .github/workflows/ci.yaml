@@ -59,8 +59,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Authenticate with GitHub CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.mlops-deploy }}
         run: |
-          echo "${{ secrets.mlops-deploy }}" | gh auth login --with-token
+          gh auth login --with-token <<< $GITHUB_TOKEN
 
       - name: List Available Codespaces
         run: gh codespace list
