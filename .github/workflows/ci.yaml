@@ -61,8 +61,8 @@ jobs:
       - name: Authenticate with GitHub CLI
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY }}
-        run: |
-          gh auth login --with-token <<< $GITHUB_TOKEN
+        run: echo "Using GitHub Token for authentication"
+
 
       - name: List Available Codespaces
         run: gh codespace list
