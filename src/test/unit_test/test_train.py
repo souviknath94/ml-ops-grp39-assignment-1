@@ -13,7 +13,7 @@ class TestTrainModel(unittest.TestCase):
         best_params, accuracy = train_model()
         self.assertIsInstance(best_params, dict, "Best parameters should be a dictionary.")
         self.assertTrue(0 <= accuracy <= 1, "Accuracy should be a float between 0 and 1.")
-        self.assertTrue(os.path.exists('model.pkl'), "Model file should exist after training.")
+        self.assertTrue(os.path.exists('models/model.pkl'), "Model file should exist after training.")
 
     def test_predict(self):
         """
