@@ -123,9 +123,9 @@ The CI/CD pipeline automates code linting, unit testing, and deployment using Gi
 
 ## Logs and Outputs
 
-- [View Linting CI/CD Logs](logs/0_Lint Code.txt)
-- [View Unit testing CI/CD Logs](logs/1_Run Unit Tests.txt)
-- [View Deployment CI/CD Logs](logs/2_Deploy and Test Application.txt)
+- [View Linting CI/CD Logs](logs/0_LintCode.txt)
+- [View Unit testing CI/CD Logs](logs/1_RunUnitTests.txt)
+- [View Deployment CI/CD Logs](logs/2_DeployandTestApplication.txt)
 ---
 
 
