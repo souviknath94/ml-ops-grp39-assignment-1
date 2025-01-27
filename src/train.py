@@ -31,10 +31,10 @@ def train_model(model_name, model, param_grid):
     # Define the artifacts directory relative to the project root
     artifact_location = os.path.join(project_root, "artifacts")
     mlflow.set_tracking_uri(f"file://{artifact_location}")
-    if not mlflow.get_experiment_by_name("wine classification"):
-        mlflow.create_experiment("classification", artifact_location=artifact_location)
+    if not mlflow.get_experiment_by_name("wine-classifier"):
+        mlflow.create_experiment("wine-classifier", artifact_location=artifact_location)
 
-    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    mlflow.set_tracking_uri("http://127.0.0.1:5001")
     with mlflow.start_run():
         # Perform Grid Search
         grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy', verbose=0)

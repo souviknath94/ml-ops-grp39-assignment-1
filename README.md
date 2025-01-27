@@ -1,4 +1,9 @@
-# Wine Classification Application
+# Wine Classification Application - ML Ops report
+## Group Number: 39
+- Souvik Nath
+- Paramartha Sengupta
+- Bidisha Sharma
+- Rounaq Chaudhari
 
 ## Project Overview
 This project is designed to train and deploy a machine learning model for classifying wine types based on specific features. The application leverages Docker for containerization, MLflow for experiment tracking, and GitHub Actions for CI/CD automation.
@@ -35,22 +40,30 @@ conda env create -f conda.yaml
 conda activate wine-classifier
 ```
 
-### 3. Start the MLflow Server
+### 3. Fetch Dataset with DVC
+DVC is used for managing and versioning large datasets. To fetch the dataset:
+```bash
+dvc pull
+```
+You should find a wine_dataset.csv under data/
+
+### 4. Start the MLflow Server
 Before running the training step, start the MLflow server to track experiments:
 ```bash
 mlflow server \
     --backend-store-uri sqlite:///mlflow.db \
     --default-artifact-root "file://$(pwd)/artifacts" \
     --host 0.0.0.0
+    --port 5001
 ```
 
-### 4. Train the Model
+### 5. Train the Model
 Run the training script to train the wine classification model and log the results in MLflow:
 ```bash
 python src/train.py
 ```
 
-### 5. Build and Run the Application
+### 6. Build and Run the Application
 
 #### Build Docker Image
 ```bash
@@ -62,7 +75,7 @@ docker build -t mlops-app:latest .
 docker run -d -p 5000:5000 --name mlops-app mlops-app:latest
 ```
 
-### 6. Test the Application
+### 7. Test the Application
 Use the following `curl` command to test the API with sample input data:
 ```bash
 curl -X POST -H "Content-Type: application/json" \
@@ -76,7 +89,7 @@ Expected Output:
 }
 ```
 
-### 7. Stop and Remove Docker Container
+### 8. Stop and Remove Docker Container
 After testing, stop and remove the running Docker container:
 ```bash
 docker stop mlops-app
@@ -126,7 +139,6 @@ The CI/CD pipeline automates code linting, unit testing, and deployment using Gi
 - [View Linting CI/CD Logs](logs/0_LintCode.txt)
 - [View Unit testing CI/CD Logs](logs/1_RunUnitTests.txt)
 - [View Deployment CI/CD Logs](logs/2_DeployandTestApplication.txt)
----
 
 
 ### Pipeline Steps
@@ -243,6 +255,3 @@ Automating testing, building, and deployment using GitHub Actions ensures that t
 
 ### 7. **Separation of Concerns**
 Each step in the CI/CD pipeline is modularized to ensure clarity, maintainability, and easier debugging.
-
-Feel free to modify or extend the pipeline and the application based on project requirements.
-
