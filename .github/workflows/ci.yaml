@@ -50,32 +50,45 @@ jobs:
 #        working-directory: ./
 #        run: python -m unittest discover -s src/test/unit_test -p "*.py"
 
-  deploy-to-codespaces:
-    name: Deploy to Codespaces
+  deploy-to-runner:
+    name: Deploy and Test Application
     runs-on: ubuntu-latest
-#    needs: test
+    needs: test
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Authenticate with GitHub CLI
-        env:
-          GH_TOKEN: ${{ secrets.DEPLOY }}
+      - name: Build Docker Image
         run: |
-          echo "${{ secrets.DEPLOY }}" | gh auth login --with-token
-          gh auth refresh -h github.com -s codespace
+          docker build -t mlops-app:latest .
 
-      - name: List Available Codespaces
-        run: gh codespace list
-
-      - name: Deploy Application to Codespace
+      - name: Run Docker Container
         run: |
-          gh codespace ssh -c mlops-deployment -C "
-          cd /workspaces/ml-ops-grp39-assignment-1 &&
-          docker build -t mlops-app:latest . &&
-          docker run -d -p 5000:5000 mlops-app:latest
-          "
+          docker run -d -p 5000:5000 --name mlops-app mlops-app:latest
+          echo "Docker container is running on port 5000."
 
-      - name: Manual Port Forwarding Instructions
+      - name: Wait for Service to Start
+        run: sleep 10  # Give the application some time to start
+
+      - name: Test Deployment with cURL
         run: |
-          echo "Go to the Codespaces Ports tab and make port 5000 Public."
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" \
+            -d '{"features": [13.2, 2.77, 2.51, 24.5, 86.0, 1.45, 1.25, 0.5, 1.7, 6.5, 1.05, 3.33, 820.0]}' \
+            http://localhost:5000/predict)
+          if [ "$RESPONSE" -eq 200 ]; then
+            echo "Application deployed successfully! HTTP Status Code: $RESPONSE"
+            echo "Verifying model response..."
+            curl -X POST -H "Content-Type: application/json" \
+              -d '{"features": [13.2, 2.77, 2.51, 24.5, 86.0, 1.45, 1.25, 0.5, 1.7, 6.5, 1.05, 3.33, 820.0]}' \
+              http://localhost:5000/predict
+          else
+            echo "Deployment failed! HTTP Status Code: $RESPONSE"
+            exit 1
+          fi
+
+      - name: Stop and Remove Docker Container
+        if: always()
+        run: |
+          docker stop mlops-app
+          docker rm mlops-app
