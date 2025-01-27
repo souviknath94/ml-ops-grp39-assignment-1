@@ -65,8 +65,8 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          docker run -d -p 5000:5000 --name mlops-app mlops-app:latest
-          echo "Docker container is running on port 5000."
+          docker run -d -p 8000:8000 --name mlops-app mlops-app:latest
+          echo "Docker container is running on port 8000."
 
       - name: Wait for Service to Start
         run: sleep 10
@@ -75,13 +75,13 @@ jobs:
         run: |
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" \
             -d '{"features": [13.2, 2.77, 2.51, 24.5, 86.0, 1.45, 1.25, 0.5, 1.7, 6.5, 1.05, 3.33, 820.0]}' \
-            http://localhost:5000/predict)
+            http://localhost:8000/predict)
           if [ "$RESPONSE" -eq 200 ]; then
             echo "Application deployed successfully! HTTP Status Code: $RESPONSE"
             echo "Verifying model response..."
             curl -X POST -H "Content-Type: application/json" \
               -d '{"features": [13.2, 2.77, 2.51, 24.5, 86.0, 1.45, 1.25, 0.5, 1.7, 6.5, 1.05, 3.33, 820.0]}' \
-              http://localhost:5000/predict
+              http://localhost:8000/predict
           else
             echo "Deployment failed! HTTP Status Code: $RESPONSE"
             exit 1
