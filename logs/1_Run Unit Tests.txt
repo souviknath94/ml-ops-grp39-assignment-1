@@ -1,0 +1,709 @@
+﻿2025-01-27T07:20:28.7679664Z Current runner version: '2.321.0'
+2025-01-27T07:20:28.7709279Z ##[group]Operating System
+2025-01-27T07:20:28.7710047Z Ubuntu
+2025-01-27T07:20:28.7710617Z 24.04.1
+2025-01-27T07:20:28.7711113Z LTS
+2025-01-27T07:20:28.7711606Z ##[endgroup]
+2025-01-27T07:20:28.7712190Z ##[group]Runner Image
+2025-01-27T07:20:28.7712770Z Image: ubuntu-24.04
+2025-01-27T07:20:28.7713346Z Version: 20250120.5.0
+2025-01-27T07:20:28.7714436Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250120.5/images/ubuntu/Ubuntu2404-Readme.md
+2025-01-27T07:20:28.7715759Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250120.5
+2025-01-27T07:20:28.7716900Z ##[endgroup]
+2025-01-27T07:20:28.7717526Z ##[group]Runner Image Provisioner
+2025-01-27T07:20:28.7718111Z 2.0.417.1
+2025-01-27T07:20:28.7718593Z ##[endgroup]
+2025-01-27T07:20:28.7719723Z ##[group]GITHUB_TOKEN Permissions
+2025-01-27T07:20:28.7722035Z Contents: read
+2025-01-27T07:20:28.7722581Z Metadata: read
+2025-01-27T07:20:28.7723363Z Packages: read
+2025-01-27T07:20:28.7724007Z ##[endgroup]
+2025-01-27T07:20:28.7727395Z Secret source: Actions
+2025-01-27T07:20:28.7728440Z Prepare workflow directory
+2025-01-27T07:20:28.8032720Z Prepare all required actions
+2025-01-27T07:20:28.8068978Z Getting action download info
+2025-01-27T07:20:28.9275002Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-01-27T07:20:29.0226480Z Download action repository 'actions/setup-python@v4' (SHA:65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236)
+2025-01-27T07:20:29.1640639Z Complete job name: Run Unit Tests
+2025-01-27T07:20:29.2362263Z ##[group]Run actions/checkout@v3
+2025-01-27T07:20:29.2363647Z with:
+2025-01-27T07:20:29.2364509Z   repository: souviknath94/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.2365801Z   token: ***
+2025-01-27T07:20:29.2366512Z   ssh-strict: true
+2025-01-27T07:20:29.2367454Z   persist-credentials: true
+2025-01-27T07:20:29.2368242Z   clean: true
+2025-01-27T07:20:29.2368924Z   sparse-checkout-cone-mode: true
+2025-01-27T07:20:29.2369750Z   fetch-depth: 1
+2025-01-27T07:20:29.2370422Z   fetch-tags: false
+2025-01-27T07:20:29.2371085Z   lfs: false
+2025-01-27T07:20:29.2371721Z   submodules: false
+2025-01-27T07:20:29.2372425Z   set-safe-directory: true
+2025-01-27T07:20:29.2373589Z ##[endgroup]
+2025-01-27T07:20:29.4863916Z Syncing repository: souviknath94/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.4865665Z ##[group]Getting Git version info
+2025-01-27T07:20:29.4866811Z Working directory is '/home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1'
+2025-01-27T07:20:29.4868027Z [command]/usr/bin/git version
+2025-01-27T07:20:29.5027298Z git version 2.48.1
+2025-01-27T07:20:29.5058483Z ##[endgroup]
+2025-01-27T07:20:29.5078836Z Temporarily overriding HOME='/home/runner/work/_temp/136e3ca2-a959-4fb1-8cf2-fc3e735ee08b' before making global git config changes
+2025-01-27T07:20:29.5081274Z Adding repository directory to the temporary git global config as a safe directory
+2025-01-27T07:20:29.5083604Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.5119618Z Deleting the contents of '/home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1'
+2025-01-27T07:20:29.5123310Z ##[group]Initializing the repository
+2025-01-27T07:20:29.5126824Z [command]/usr/bin/git init /home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.5203569Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-01-27T07:20:29.5204588Z hint: is subject to change. To configure the initial branch name to use in all
+2025-01-27T07:20:29.5205499Z hint: of your new repositories, which will suppress this warning, call:
+2025-01-27T07:20:29.5206165Z hint:
+2025-01-27T07:20:29.5206847Z hint: 	git config --global init.defaultBranch <name>
+2025-01-27T07:20:29.5207455Z hint:
+2025-01-27T07:20:29.5208020Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-01-27T07:20:29.5209520Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-01-27T07:20:29.5210264Z hint:
+2025-01-27T07:20:29.5210662Z hint: 	git branch -m <name>
+2025-01-27T07:20:29.5216998Z Initialized empty Git repository in /home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1/.git/
+2025-01-27T07:20:29.5226815Z [command]/usr/bin/git remote add origin https://github.com/souviknath94/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.5259883Z ##[endgroup]
+2025-01-27T07:20:29.5261081Z ##[group]Disabling automatic garbage collection
+2025-01-27T07:20:29.5263078Z [command]/usr/bin/git config --local gc.auto 0
+2025-01-27T07:20:29.5290437Z ##[endgroup]
+2025-01-27T07:20:29.5291212Z ##[group]Setting up auth
+2025-01-27T07:20:29.5296024Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-01-27T07:20:29.5322331Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-01-27T07:20:29.5721761Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-01-27T07:20:29.5748093Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-01-27T07:20:29.5971683Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-01-27T07:20:29.6004734Z ##[endgroup]
+2025-01-27T07:20:29.6006300Z ##[group]Fetching the repository
+2025-01-27T07:20:29.6014159Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +ca58a577503323f68c05d5d92db4e6558b958270:refs/remotes/origin/main
+2025-01-27T07:20:29.8434890Z remote: Enumerating objects: 197, done.        
+2025-01-27T07:20:29.8436198Z remote: Counting objects:   0% (1/197)        
+2025-01-27T07:20:29.8437740Z remote: Counting objects:   1% (2/197)        
+2025-01-27T07:20:29.8438913Z remote: Counting objects:   2% (4/197)        
+2025-01-27T07:20:29.8439755Z remote: Counting objects:   3% (6/197)        
+2025-01-27T07:20:29.8440486Z remote: Counting objects:   4% (8/197)        
+2025-01-27T07:20:29.8441214Z remote: Counting objects:   5% (10/197)        
+2025-01-27T07:20:29.8441944Z remote: Counting objects:   6% (12/197)        
+2025-01-27T07:20:29.8442666Z remote: Counting objects:   7% (14/197)        
+2025-01-27T07:20:29.8443394Z remote: Counting objects:   8% (16/197)        
+2025-01-27T07:20:29.8444118Z remote: Counting objects:   9% (18/197)        
+2025-01-27T07:20:29.8444799Z remote: Counting objects:  10% (20/197)        
+2025-01-27T07:20:29.8445367Z remote: Counting objects:  11% (22/197)        
+2025-01-27T07:20:29.8445954Z remote: Counting objects:  12% (24/197)        
+2025-01-27T07:20:29.8446719Z remote: Counting objects:  13% (26/197)        
+2025-01-27T07:20:29.8447368Z remote: Counting objects:  14% (28/197)        
+2025-01-27T07:20:29.8447949Z remote: Counting objects:  15% (30/197)        
+2025-01-27T07:20:29.8448551Z remote: Counting objects:  16% (32/197)        
+2025-01-27T07:20:29.8449126Z remote: Counting objects:  17% (34/197)        
+2025-01-27T07:20:29.8449701Z remote: Counting objects:  18% (36/197)        
+2025-01-27T07:20:29.8450273Z remote: Counting objects:  19% (38/197)        
+2025-01-27T07:20:29.8450838Z remote: Counting objects:  20% (40/197)        
+2025-01-27T07:20:29.8451403Z remote: Counting objects:  21% (42/197)        
+2025-01-27T07:20:29.8451981Z remote: Counting objects:  22% (44/197)        
+2025-01-27T07:20:29.8452551Z remote: Counting objects:  23% (46/197)        
+2025-01-27T07:20:29.8453127Z remote: Counting objects:  24% (48/197)        
+2025-01-27T07:20:29.8453690Z remote: Counting objects:  25% (50/197)        
+2025-01-27T07:20:29.8454254Z remote: Counting objects:  26% (52/197)        
+2025-01-27T07:20:29.8455034Z remote: Counting objects:  27% (54/197)        
+2025-01-27T07:20:29.8455931Z remote: Counting objects:  28% (56/197)        
+2025-01-27T07:20:29.8456507Z remote: Counting objects:  29% (58/197)        
+2025-01-27T07:20:29.8457197Z remote: Counting objects:  30% (60/197)        
+2025-01-27T07:20:29.8457778Z remote: Counting objects:  31% (62/197)        
+2025-01-27T07:20:29.8458352Z remote: Counting objects:  32% (64/197)        
+2025-01-27T07:20:29.8458915Z remote: Counting objects:  33% (66/197)        
+2025-01-27T07:20:29.8459489Z remote: Counting objects:  34% (67/197)        
+2025-01-27T07:20:29.8460078Z remote: Counting objects:  35% (69/197)        
+2025-01-27T07:20:29.8460651Z remote: Counting objects:  36% (71/197)        
+2025-01-27T07:20:29.8461223Z remote: Counting objects:  37% (73/197)        
+2025-01-27T07:20:29.8461807Z remote: Counting objects:  38% (75/197)        
+2025-01-27T07:20:29.8462382Z remote: Counting objects:  39% (77/197)        
+2025-01-27T07:20:29.8462948Z remote: Counting objects:  40% (79/197)        
+2025-01-27T07:20:29.8463535Z remote: Counting objects:  41% (81/197)        
+2025-01-27T07:20:29.8464099Z remote: Counting objects:  42% (83/197)        
+2025-01-27T07:20:29.8464661Z remote: Counting objects:  43% (85/197)        
+2025-01-27T07:20:29.8465227Z remote: Counting objects:  44% (87/197)        
+2025-01-27T07:20:29.8465785Z remote: Counting objects:  45% (89/197)        
+2025-01-27T07:20:29.8466341Z remote: Counting objects:  46% (91/197)        
+2025-01-27T07:20:29.8467022Z remote: Counting objects:  47% (93/197)        
+2025-01-27T07:20:29.8467731Z remote: Counting objects:  48% (95/197)        
+2025-01-27T07:20:29.8468299Z remote: Counting objects:  49% (97/197)        
+2025-01-27T07:20:29.8468872Z remote: Counting objects:  50% (99/197)        
+2025-01-27T07:20:29.8469434Z remote: Counting objects:  51% (101/197)        
+2025-01-27T07:20:29.8470003Z remote: Counting objects:  52% (103/197)        
+2025-01-27T07:20:29.8470577Z remote: Counting objects:  53% (105/197)        
+2025-01-27T07:20:29.8471160Z remote: Counting objects:  54% (107/197)        
+2025-01-27T07:20:29.8471731Z remote: Counting objects:  55% (109/197)        
+2025-01-27T07:20:29.8472316Z remote: Counting objects:  56% (111/197)        
+2025-01-27T07:20:29.8472889Z remote: Counting objects:  57% (113/197)        
+2025-01-27T07:20:29.8473468Z remote: Counting objects:  58% (115/197)        
+2025-01-27T07:20:29.8474040Z remote: Counting objects:  59% (117/197)        
+2025-01-27T07:20:29.8474616Z remote: Counting objects:  60% (119/197)        
+2025-01-27T07:20:29.8475183Z remote: Counting objects:  61% (121/197)        
+2025-01-27T07:20:29.8475754Z remote: Counting objects:  62% (123/197)        
+2025-01-27T07:20:29.8476323Z remote: Counting objects:  63% (125/197)        
+2025-01-27T07:20:29.8477142Z remote: Counting objects:  64% (127/197)        
+2025-01-27T07:20:29.8477709Z remote: Counting objects:  65% (129/197)        
+2025-01-27T07:20:29.8478279Z remote: Counting objects:  66% (131/197)        
+2025-01-27T07:20:29.8478851Z remote: Counting objects:  67% (132/197)        
+2025-01-27T07:20:29.8479418Z remote: Counting objects:  68% (134/197)        
+2025-01-27T07:20:29.8479977Z remote: Counting objects:  69% (136/197)        
+2025-01-27T07:20:29.8480541Z remote: Counting objects:  70% (138/197)        
+2025-01-27T07:20:29.8481103Z remote: Counting objects:  71% (140/197)        
+2025-01-27T07:20:29.8481669Z remote: Counting objects:  72% (142/197)        
+2025-01-27T07:20:29.8482239Z remote: Counting objects:  73% (144/197)        
+2025-01-27T07:20:29.8482806Z remote: Counting objects:  74% (146/197)        
+2025-01-27T07:20:29.8483374Z remote: Counting objects:  75% (148/197)        
+2025-01-27T07:20:29.8483937Z remote: Counting objects:  76% (150/197)        
+2025-01-27T07:20:29.8484542Z remote: Counting objects:  77% (152/197)        
+2025-01-27T07:20:29.8485544Z remote: Counting objects:  78% (154/197)        
+2025-01-27T07:20:29.8486700Z remote: Counting objects:  79% (156/197)        
+2025-01-27T07:20:29.8487727Z remote: Counting objects:  80% (158/197)        
+2025-01-27T07:20:29.8488976Z remote: Counting objects:  81% (160/197)        
+2025-01-27T07:20:29.8489930Z remote: Counting objects:  82% (162/197)        
+2025-01-27T07:20:29.8490934Z remote: Counting objects:  83% (164/197)        
+2025-01-27T07:20:29.8491872Z remote: Counting objects:  84% (166/197)        
+2025-01-27T07:20:29.8492805Z remote: Counting objects:  85% (168/197)        
+2025-01-27T07:20:29.8493723Z remote: Counting objects:  86% (170/197)        
+2025-01-27T07:20:29.8494518Z remote: Counting objects:  87% (172/197)        
+2025-01-27T07:20:29.8495260Z remote: Counting objects:  88% (174/197)        
+2025-01-27T07:20:29.8495842Z remote: Counting objects:  89% (176/197)        
+2025-01-27T07:20:29.8496421Z remote: Counting objects:  90% (178/197)        
+2025-01-27T07:20:29.8497398Z remote: Counting objects:  91% (180/197)        
+2025-01-27T07:20:29.8497979Z remote: Counting objects:  92% (182/197)        
+2025-01-27T07:20:29.8498545Z remote: Counting objects:  93% (184/197)        
+2025-01-27T07:20:29.8499133Z remote: Counting objects:  94% (186/197)        
+2025-01-27T07:20:29.8499703Z remote: Counting objects:  95% (188/197)        
+2025-01-27T07:20:29.8500267Z remote: Counting objects:  96% (190/197)        
+2025-01-27T07:20:29.8500828Z remote: Counting objects:  97% (192/197)        
+2025-01-27T07:20:29.8501390Z remote: Counting objects:  98% (194/197)        
+2025-01-27T07:20:29.8501962Z remote: Counting objects:  99% (196/197)        
+2025-01-27T07:20:29.8502529Z remote: Counting objects: 100% (197/197)        
+2025-01-27T07:20:29.8503291Z remote: Counting objects: 100% (197/197), done.        
+2025-01-27T07:20:29.8503924Z remote: Compressing objects:   1% (1/81)        
+2025-01-27T07:20:29.8504500Z remote: Compressing objects:   2% (2/81)        
+2025-01-27T07:20:29.8505070Z remote: Compressing objects:   3% (3/81)        
+2025-01-27T07:20:29.8505647Z remote: Compressing objects:   4% (4/81)        
+2025-01-27T07:20:29.8506214Z remote: Compressing objects:   6% (5/81)        
+2025-01-27T07:20:29.8506928Z remote: Compressing objects:   7% (6/81)        
+2025-01-27T07:20:29.8507556Z remote: Compressing objects:   8% (7/81)        
+2025-01-27T07:20:29.8508122Z remote: Compressing objects:   9% (8/81)        
+2025-01-27T07:20:29.8508688Z remote: Compressing objects:  11% (9/81)        
+2025-01-27T07:20:29.8509314Z remote: Compressing objects:  12% (10/81)        
+2025-01-27T07:20:29.8510031Z remote: Compressing objects:  13% (11/81)        
+2025-01-27T07:20:29.8510617Z remote: Compressing objects:  14% (12/81)        
+2025-01-27T07:20:29.8511194Z remote: Compressing objects:  16% (13/81)        
+2025-01-27T07:20:29.8511772Z remote: Compressing objects:  17% (14/81)        
+2025-01-27T07:20:29.8512354Z remote: Compressing objects:  18% (15/81)        
+2025-01-27T07:20:29.8512929Z remote: Compressing objects:  19% (16/81)        
+2025-01-27T07:20:29.8513506Z remote: Compressing objects:  20% (17/81)        
+2025-01-27T07:20:29.8514083Z remote: Compressing objects:  22% (18/81)        
+2025-01-27T07:20:29.8514663Z remote: Compressing objects:  23% (19/81)        
+2025-01-27T07:20:29.8515243Z remote: Compressing objects:  24% (20/81)        
+2025-01-27T07:20:29.8515931Z remote: Compressing objects:  25% (21/81)        
+2025-01-27T07:20:29.8516504Z remote: Compressing objects:  27% (22/81)        
+2025-01-27T07:20:29.8517230Z remote: Compressing objects:  28% (23/81)        
+2025-01-27T07:20:29.8517818Z remote: Compressing objects:  29% (24/81)        
+2025-01-27T07:20:29.8518385Z remote: Compressing objects:  30% (25/81)        
+2025-01-27T07:20:29.8518969Z remote: Compressing objects:  32% (26/81)        
+2025-01-27T07:20:29.8519628Z remote: Compressing objects:  33% (27/81)        
+2025-01-27T07:20:29.8520207Z remote: Compressing objects:  34% (28/81)        
+2025-01-27T07:20:29.8520858Z remote: Compressing objects:  35% (29/81)        
+2025-01-27T07:20:29.8521547Z remote: Compressing objects:  37% (30/81)        
+2025-01-27T07:20:29.8522550Z remote: Compressing objects:  38% (31/81)        
+2025-01-27T07:20:29.8523718Z remote: Compressing objects:  39% (32/81)        
+2025-01-27T07:20:29.8524669Z remote: Compressing objects:  40% (33/81)        
+2025-01-27T07:20:29.8525615Z remote: Compressing objects:  41% (34/81)        
+2025-01-27T07:20:29.8526707Z remote: Compressing objects:  43% (35/81)        
+2025-01-27T07:20:29.8527666Z remote: Compressing objects:  44% (36/81)        
+2025-01-27T07:20:29.8528621Z remote: Compressing objects:  45% (37/81)        
+2025-01-27T07:20:29.8529573Z remote: Compressing objects:  46% (38/81)        
+2025-01-27T07:20:29.8530526Z remote: Compressing objects:  48% (39/81)        
+2025-01-27T07:20:29.8531384Z remote: Compressing objects:  49% (40/81)        
+2025-01-27T07:20:29.8531962Z remote: Compressing objects:  50% (41/81)        
+2025-01-27T07:20:29.8532537Z remote: Compressing objects:  51% (42/81)        
+2025-01-27T07:20:29.8533114Z remote: Compressing objects:  53% (43/81)        
+2025-01-27T07:20:29.8533680Z remote: Compressing objects:  54% (44/81)        
+2025-01-27T07:20:29.8534254Z remote: Compressing objects:  55% (45/81)        
+2025-01-27T07:20:29.8534825Z remote: Compressing objects:  56% (46/81)        
+2025-01-27T07:20:29.8535401Z remote: Compressing objects:  58% (47/81)        
+2025-01-27T07:20:29.8535975Z remote: Compressing objects:  59% (48/81)        
+2025-01-27T07:20:29.8536733Z remote: Compressing objects:  60% (49/81)        
+2025-01-27T07:20:29.8537332Z remote: Compressing objects:  61% (50/81)        
+2025-01-27T07:20:29.8537904Z remote: Compressing objects:  62% (51/81)        
+2025-01-27T07:20:29.8538696Z remote: Compressing objects:  64% (52/81)        
+2025-01-27T07:20:29.8539295Z remote: Compressing objects:  65% (53/81)        
+2025-01-27T07:20:29.8539877Z remote: Compressing objects:  66% (54/81)        
+2025-01-27T07:20:29.8540452Z remote: Compressing objects:  67% (55/81)        
+2025-01-27T07:20:29.8541016Z remote: Compressing objects:  69% (56/81)        
+2025-01-27T07:20:29.8541590Z remote: Compressing objects:  70% (57/81)        
+2025-01-27T07:20:29.8542175Z remote: Compressing objects:  71% (58/81)        
+2025-01-27T07:20:29.8543135Z remote: Compressing objects:  72% (59/81)        
+2025-01-27T07:20:29.8544149Z remote: Compressing objects:  74% (60/81)        
+2025-01-27T07:20:29.8545157Z remote: Compressing objects:  75% (61/81)        
+2025-01-27T07:20:29.8545891Z remote: Compressing objects:  76% (62/81)        
+2025-01-27T07:20:29.8546691Z remote: Compressing objects:  77% (63/81)        
+2025-01-27T07:20:29.8547702Z remote: Compressing objects:  79% (64/81)        
+2025-01-27T07:20:29.8548682Z remote: Compressing objects:  80% (65/81)        
+2025-01-27T07:20:29.8549657Z remote: Compressing objects:  81% (66/81)        
+2025-01-27T07:20:29.8550606Z remote: Compressing objects:  82% (67/81)        
+2025-01-27T07:20:29.8551561Z remote: Compressing objects:  83% (68/81)        
+2025-01-27T07:20:29.8552509Z remote: Compressing objects:  85% (69/81)        
+2025-01-27T07:20:29.8553461Z remote: Compressing objects:  86% (70/81)        
+2025-01-27T07:20:29.8554414Z remote: Compressing objects:  87% (71/81)        
+2025-01-27T07:20:29.8555353Z remote: Compressing objects:  88% (72/81)        
+2025-01-27T07:20:29.8555937Z remote: Compressing objects:  90% (73/81)        
+2025-01-27T07:20:29.8556508Z remote: Compressing objects:  91% (74/81)        
+2025-01-27T07:20:29.8557302Z remote: Compressing objects:  92% (75/81)        
+2025-01-27T07:20:29.8558276Z remote: Compressing objects:  93% (76/81)        
+2025-01-27T07:20:29.8559380Z remote: Compressing objects:  95% (77/81)        
+2025-01-27T07:20:29.8560322Z remote: Compressing objects:  96% (78/81)        
+2025-01-27T07:20:29.8560920Z remote: Compressing objects:  97% (79/81)        
+2025-01-27T07:20:29.8561495Z remote: Compressing objects:  98% (80/81)        
+2025-01-27T07:20:29.8562085Z remote: Compressing objects: 100% (81/81)        
+2025-01-27T07:20:29.8562703Z remote: Compressing objects: 100% (81/81), done.        
+2025-01-27T07:20:29.8563527Z Receiving objects:   0% (1/197)
+2025-01-27T07:20:29.8563990Z Receiving objects:   1% (2/197)
+2025-01-27T07:20:29.8564452Z Receiving objects:   2% (4/197)
+2025-01-27T07:20:29.8564914Z Receiving objects:   3% (6/197)
+2025-01-27T07:20:29.8565371Z Receiving objects:   4% (8/197)
+2025-01-27T07:20:29.8565834Z Receiving objects:   5% (10/197)
+2025-01-27T07:20:29.8566303Z Receiving objects:   6% (12/197)
+2025-01-27T07:20:29.8567013Z Receiving objects:   7% (14/197)
+2025-01-27T07:20:29.8567502Z Receiving objects:   8% (16/197)
+2025-01-27T07:20:29.8567972Z Receiving objects:   9% (18/197)
+2025-01-27T07:20:29.8568445Z Receiving objects:  10% (20/197)
+2025-01-27T07:20:29.8568903Z Receiving objects:  11% (22/197)
+2025-01-27T07:20:29.8569367Z Receiving objects:  12% (24/197)
+2025-01-27T07:20:29.8569831Z Receiving objects:  13% (26/197)
+2025-01-27T07:20:29.8570285Z Receiving objects:  14% (28/197)
+2025-01-27T07:20:29.8570752Z Receiving objects:  15% (30/197)
+2025-01-27T07:20:29.8571408Z Receiving objects:  16% (32/197)
+2025-01-27T07:20:29.8572304Z Receiving objects:  17% (34/197)
+2025-01-27T07:20:29.8573200Z Receiving objects:  18% (36/197)
+2025-01-27T07:20:29.8573736Z Receiving objects:  19% (38/197)
+2025-01-27T07:20:29.8574205Z Receiving objects:  20% (40/197)
+2025-01-27T07:20:29.8574668Z Receiving objects:  21% (42/197)
+2025-01-27T07:20:29.8575132Z Receiving objects:  22% (44/197)
+2025-01-27T07:20:29.8575584Z Receiving objects:  23% (46/197)
+2025-01-27T07:20:29.8576046Z Receiving objects:  24% (48/197)
+2025-01-27T07:20:29.8576712Z Receiving objects:  25% (50/197)
+2025-01-27T07:20:29.8577468Z Receiving objects:  26% (52/197)
+2025-01-27T07:20:29.8577954Z Receiving objects:  27% (54/197)
+2025-01-27T07:20:29.8578499Z Receiving objects:  28% (56/197)
+2025-01-27T07:20:29.8578965Z Receiving objects:  29% (58/197)
+2025-01-27T07:20:29.8579428Z Receiving objects:  30% (60/197)
+2025-01-27T07:20:29.8579895Z Receiving objects:  31% (62/197)
+2025-01-27T07:20:29.8580350Z Receiving objects:  32% (64/197)
+2025-01-27T07:20:29.8580816Z Receiving objects:  33% (66/197)
+2025-01-27T07:20:29.8581288Z Receiving objects:  34% (67/197)
+2025-01-27T07:20:29.8581752Z Receiving objects:  35% (69/197)
+2025-01-27T07:20:29.8582213Z Receiving objects:  36% (71/197)
+2025-01-27T07:20:29.8582671Z Receiving objects:  37% (73/197)
+2025-01-27T07:20:29.8583135Z Receiving objects:  38% (75/197)
+2025-01-27T07:20:29.8583644Z Receiving objects:  39% (77/197)
+2025-01-27T07:20:29.8584171Z Receiving objects:  40% (79/197)
+2025-01-27T07:20:29.8670291Z Receiving objects:  41% (81/197)
+2025-01-27T07:20:29.8671269Z Receiving objects:  42% (83/197)
+2025-01-27T07:20:29.8672219Z Receiving objects:  43% (85/197)
+2025-01-27T07:20:29.8672994Z Receiving objects:  44% (87/197)
+2025-01-27T07:20:29.8673812Z Receiving objects:  45% (89/197)
+2025-01-27T07:20:29.8674650Z Receiving objects:  46% (91/197)
+2025-01-27T07:20:29.8675473Z Receiving objects:  47% (93/197)
+2025-01-27T07:20:29.8676292Z Receiving objects:  48% (95/197)
+2025-01-27T07:20:29.8677775Z Receiving objects:  49% (97/197)
+2025-01-27T07:20:29.8678611Z Receiving objects:  50% (99/197)
+2025-01-27T07:20:29.8679414Z Receiving objects:  51% (101/197)
+2025-01-27T07:20:29.8680226Z Receiving objects:  52% (103/197)
+2025-01-27T07:20:29.8681125Z Receiving objects:  53% (105/197)
+2025-01-27T07:20:29.8681931Z Receiving objects:  54% (107/197)
+2025-01-27T07:20:29.8682728Z Receiving objects:  55% (109/197)
+2025-01-27T07:20:29.8683554Z Receiving objects:  56% (111/197)
+2025-01-27T07:20:29.8684372Z Receiving objects:  57% (113/197)
+2025-01-27T07:20:29.8685234Z Receiving objects:  58% (115/197)
+2025-01-27T07:20:29.8686122Z Receiving objects:  59% (117/197)
+2025-01-27T07:20:29.8687177Z Receiving objects:  60% (119/197)
+2025-01-27T07:20:29.8687950Z Receiving objects:  61% (121/197)
+2025-01-27T07:20:29.8688607Z Receiving objects:  62% (123/197)
+2025-01-27T07:20:29.8689300Z remote: Total 197 (delta 46), reused 182 (delta 40), pack-reused 0 (from 0)        
+2025-01-27T07:20:29.8690004Z Receiving objects:  63% (125/197)
+2025-01-27T07:20:29.8690531Z Receiving objects:  64% (127/197)
+2025-01-27T07:20:29.8796215Z Receiving objects:  65% (129/197)
+2025-01-27T07:20:29.8797109Z Receiving objects:  66% (131/197)
+2025-01-27T07:20:29.8797600Z Receiving objects:  67% (132/197)
+2025-01-27T07:20:29.8798076Z Receiving objects:  68% (134/197)
+2025-01-27T07:20:29.8798557Z Receiving objects:  69% (136/197)
+2025-01-27T07:20:29.8799042Z Receiving objects:  70% (138/197)
+2025-01-27T07:20:29.8799509Z Receiving objects:  71% (140/197)
+2025-01-27T07:20:29.8800005Z Receiving objects:  72% (142/197)
+2025-01-27T07:20:29.8800507Z Receiving objects:  73% (144/197)
+2025-01-27T07:20:29.8800983Z Receiving objects:  74% (146/197)
+2025-01-27T07:20:29.8801460Z Receiving objects:  75% (148/197)
+2025-01-27T07:20:29.8801918Z Receiving objects:  76% (150/197)
+2025-01-27T07:20:29.8802394Z Receiving objects:  77% (152/197)
+2025-01-27T07:20:29.8802864Z Receiving objects:  78% (154/197)
+2025-01-27T07:20:29.8803321Z Receiving objects:  79% (156/197)
+2025-01-27T07:20:29.8803898Z Receiving objects:  80% (158/197)
+2025-01-27T07:20:29.8804388Z Receiving objects:  81% (160/197)
+2025-01-27T07:20:29.8804854Z Receiving objects:  82% (162/197)
+2025-01-27T07:20:29.8805324Z Receiving objects:  83% (164/197)
+2025-01-27T07:20:29.8805806Z Receiving objects:  84% (166/197)
+2025-01-27T07:20:29.8806275Z Receiving objects:  85% (168/197)
+2025-01-27T07:20:29.8807002Z Receiving objects:  86% (170/197)
+2025-01-27T07:20:29.8807487Z Receiving objects:  87% (172/197)
+2025-01-27T07:20:29.8807975Z Receiving objects:  88% (174/197)
+2025-01-27T07:20:29.8808504Z Receiving objects:  89% (176/197)
+2025-01-27T07:20:29.8809175Z Receiving objects:  90% (178/197)
+2025-01-27T07:20:29.8809667Z Receiving objects:  91% (180/197)
+2025-01-27T07:20:29.8810140Z Receiving objects:  92% (182/197)
+2025-01-27T07:20:29.8810607Z Receiving objects:  93% (184/197)
+2025-01-27T07:20:29.8811077Z Receiving objects:  94% (186/197)
+2025-01-27T07:20:29.8811551Z Receiving objects:  95% (188/197)
+2025-01-27T07:20:29.8812019Z Receiving objects:  96% (190/197)
+2025-01-27T07:20:29.8812494Z Receiving objects:  97% (192/197)
+2025-01-27T07:20:29.8812963Z Receiving objects:  98% (194/197)
+2025-01-27T07:20:29.8813475Z Receiving objects:  99% (196/197)
+2025-01-27T07:20:29.8813945Z Receiving objects: 100% (197/197)
+2025-01-27T07:20:29.8814547Z Receiving objects: 100% (197/197), 111.69 KiB | 11.17 MiB/s, done.
+2025-01-27T07:20:29.8815418Z Resolving deltas:   0% (0/46)
+2025-01-27T07:20:29.8816218Z Resolving deltas:   2% (1/46)
+2025-01-27T07:20:29.8817038Z Resolving deltas:   4% (2/46)
+2025-01-27T07:20:29.8817560Z Resolving deltas:   6% (3/46)
+2025-01-27T07:20:29.8818202Z Resolving deltas:   8% (4/46)
+2025-01-27T07:20:29.8818671Z Resolving deltas:  10% (5/46)
+2025-01-27T07:20:29.8819124Z Resolving deltas:  13% (6/46)
+2025-01-27T07:20:29.8819660Z Resolving deltas:  15% (7/46)
+2025-01-27T07:20:29.8820128Z Resolving deltas:  17% (8/46)
+2025-01-27T07:20:29.8820576Z Resolving deltas:  19% (9/46)
+2025-01-27T07:20:29.8821035Z Resolving deltas:  21% (10/46)
+2025-01-27T07:20:29.8821587Z Resolving deltas:  23% (11/46)
+2025-01-27T07:20:29.8822070Z Resolving deltas:  26% (12/46)
+2025-01-27T07:20:29.8822597Z Resolving deltas:  28% (13/46)
+2025-01-27T07:20:29.8823058Z Resolving deltas:  30% (14/46)
+2025-01-27T07:20:29.8823511Z Resolving deltas:  32% (15/46)
+2025-01-27T07:20:29.8823969Z Resolving deltas:  34% (16/46)
+2025-01-27T07:20:29.8824424Z Resolving deltas:  36% (17/46)
+2025-01-27T07:20:29.8824908Z Resolving deltas:  39% (18/46)
+2025-01-27T07:20:29.8825403Z Resolving deltas:  41% (19/46)
+2025-01-27T07:20:29.8825851Z Resolving deltas:  43% (20/46)
+2025-01-27T07:20:29.8826385Z Resolving deltas:  45% (21/46)
+2025-01-27T07:20:29.8827014Z Resolving deltas:  47% (22/46)
+2025-01-27T07:20:29.8827566Z Resolving deltas:  50% (23/46)
+2025-01-27T07:20:29.8828102Z Resolving deltas:  52% (24/46)
+2025-01-27T07:20:29.8828558Z Resolving deltas:  54% (25/46)
+2025-01-27T07:20:29.8829029Z Resolving deltas:  58% (27/46)
+2025-01-27T07:20:29.8829542Z Resolving deltas:  60% (28/46)
+2025-01-27T07:20:29.8829995Z Resolving deltas:  63% (29/46)
+2025-01-27T07:20:29.8839992Z Resolving deltas:  65% (30/46)
+2025-01-27T07:20:29.8840459Z Resolving deltas:  67% (31/46)
+2025-01-27T07:20:29.8840924Z Resolving deltas:  69% (32/46)
+2025-01-27T07:20:29.8841387Z Resolving deltas:  71% (33/46)
+2025-01-27T07:20:29.8841928Z Resolving deltas:  73% (34/46)
+2025-01-27T07:20:29.8842397Z Resolving deltas:  76% (35/46)
+2025-01-27T07:20:29.8842849Z Resolving deltas:  78% (36/46)
+2025-01-27T07:20:29.8843382Z Resolving deltas:  80% (37/46)
+2025-01-27T07:20:29.8844124Z Resolving deltas:  82% (38/46)
+2025-01-27T07:20:29.8844696Z Resolving deltas:  84% (39/46)
+2025-01-27T07:20:29.8845158Z Resolving deltas:  86% (40/46)
+2025-01-27T07:20:29.8845617Z Resolving deltas:  89% (41/46)
+2025-01-27T07:20:29.8846062Z Resolving deltas:  91% (42/46)
+2025-01-27T07:20:29.8846683Z Resolving deltas:  93% (43/46)
+2025-01-27T07:20:29.8847259Z Resolving deltas:  95% (44/46)
+2025-01-27T07:20:29.8847709Z Resolving deltas:  97% (45/46)
+2025-01-27T07:20:29.8848169Z Resolving deltas: 100% (46/46)
+2025-01-27T07:20:29.8848648Z Resolving deltas: 100% (46/46), done.
+2025-01-27T07:20:29.8908188Z From https://github.com/souviknath94/ml-ops-grp39-assignment-1
+2025-01-27T07:20:29.8909416Z  * [new ref]         ca58a577503323f68c05d5d92db4e6558b958270 -> origin/main
+2025-01-27T07:20:29.8939751Z ##[endgroup]
+2025-01-27T07:20:29.8941012Z ##[group]Determining the checkout info
+2025-01-27T07:20:29.8942488Z ##[endgroup]
+2025-01-27T07:20:29.8943752Z ##[group]Checking out the ref
+2025-01-27T07:20:29.8948085Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-01-27T07:20:29.9107809Z Switched to a new branch 'main'
+2025-01-27T07:20:29.9111411Z branch 'main' set up to track 'origin/main'.
+2025-01-27T07:20:29.9118095Z ##[endgroup]
+2025-01-27T07:20:29.9152402Z [command]/usr/bin/git log -1 --format='%H'
+2025-01-27T07:20:29.9174111Z 'ca58a577503323f68c05d5d92db4e6558b958270'
+2025-01-27T07:20:29.9402398Z ##[group]Run actions/setup-python@v4
+2025-01-27T07:20:29.9402966Z with:
+2025-01-27T07:20:29.9403330Z   python-version: 3.10
+2025-01-27T07:20:29.9403754Z   check-latest: false
+2025-01-27T07:20:29.9404312Z   token: ***
+2025-01-27T07:20:29.9404711Z   update-environment: true
+2025-01-27T07:20:29.9405160Z   allow-prereleases: false
+2025-01-27T07:20:29.9405598Z ##[endgroup]
+2025-01-27T07:20:30.0622755Z ##[group]Installed versions
+2025-01-27T07:20:30.0680345Z Successfully set up CPython (3.10.16)
+2025-01-27T07:20:30.0682257Z ##[endgroup]
+2025-01-27T07:20:30.0781604Z ##[group]Run pip install -r requirements.txt
+2025-01-27T07:20:30.0782271Z [36;1mpip install -r requirements.txt[0m
+2025-01-27T07:20:30.0816803Z shell: /usr/bin/bash -e {0}
+2025-01-27T07:20:30.0817302Z env:
+2025-01-27T07:20:30.0817784Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:20:30.0818559Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-01-27T07:20:30.0819307Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:20:30.0819973Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:20:30.0820680Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:20:30.0821368Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-01-27T07:20:30.0821939Z ##[endgroup]
+2025-01-27T07:20:30.8916747Z Collecting flask (from -r requirements.txt (line 1))
+2025-01-27T07:20:30.9371741Z   Downloading flask-3.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-01-27T07:20:30.9758618Z Collecting joblib (from -r requirements.txt (line 2))
+2025-01-27T07:20:30.9833017Z   Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+2025-01-27T07:20:31.2140459Z Collecting numpy (from -r requirements.txt (line 3))
+2025-01-27T07:20:31.2217847Z   Downloading numpy-2.2.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+2025-01-27T07:20:31.3362455Z Collecting scikit-learn (from -r requirements.txt (line 4))
+2025-01-27T07:20:31.3434769Z   Downloading scikit_learn-1.6.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+2025-01-27T07:20:31.4010034Z Collecting mlflow (from -r requirements.txt (line 5))
+2025-01-27T07:20:31.4091195Z   Downloading mlflow-2.20.0-py3-none-any.whl.metadata (30 kB)
+2025-01-27T07:20:31.5635916Z Collecting pandas (from -r requirements.txt (line 6))
+2025-01-27T07:20:31.5711264Z   Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+2025-01-27T07:20:31.6603249Z Collecting Werkzeug>=3.1 (from flask->-r requirements.txt (line 1))
+2025-01-27T07:20:31.6677915Z   Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+2025-01-27T07:20:31.6929044Z Collecting Jinja2>=3.1.2 (from flask->-r requirements.txt (line 1))
+2025-01-27T07:20:31.6998435Z   Downloading jinja2-3.1.5-py3-none-any.whl.metadata (2.6 kB)
+2025-01-27T07:20:31.7190702Z Collecting itsdangerous>=2.2 (from flask->-r requirements.txt (line 1))
+2025-01-27T07:20:31.7262075Z   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+2025-01-27T07:20:31.7556765Z Collecting click>=8.1.3 (from flask->-r requirements.txt (line 1))
+2025-01-27T07:20:31.7626267Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-01-27T07:20:31.7807439Z Collecting blinker>=1.9 (from flask->-r requirements.txt (line 1))
+2025-01-27T07:20:31.7880125Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+2025-01-27T07:20:31.9481638Z Collecting scipy>=1.6.0 (from scikit-learn->-r requirements.txt (line 4))
+2025-01-27T07:20:31.9558942Z   Downloading scipy-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+2025-01-27T07:20:31.9891610Z Collecting threadpoolctl>=3.1.0 (from scikit-learn->-r requirements.txt (line 4))
+2025-01-27T07:20:31.9965999Z   Downloading threadpoolctl-3.5.0-py3-none-any.whl.metadata (13 kB)
+2025-01-27T07:20:32.0392953Z Collecting mlflow-skinny==2.20.0 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.0467517Z   Downloading mlflow_skinny-2.20.0-py3-none-any.whl.metadata (31 kB)
+2025-01-27T07:20:32.1147050Z Collecting alembic!=1.10.0,<2 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.1220759Z   Downloading alembic-1.14.1-py3-none-any.whl.metadata (7.4 kB)
+2025-01-27T07:20:32.1611750Z Collecting docker<8,>=4.0.0 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.1681307Z   Downloading docker-7.1.0-py3-none-any.whl.metadata (3.8 kB)
+2025-01-27T07:20:32.1993421Z Collecting graphene<4 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.2071886Z   Downloading graphene-3.4.3-py2.py3-none-any.whl.metadata (6.9 kB)
+2025-01-27T07:20:32.2392618Z Collecting gunicorn<24 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.2464885Z   Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
+2025-01-27T07:20:32.2796103Z Collecting markdown<4,>=3.3 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.2866198Z   Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+2025-01-27T07:20:32.4488038Z Collecting matplotlib<4 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.4564085Z   Downloading matplotlib-3.10.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2025-01-27T07:20:32.5684295Z Collecting pyarrow<19,>=4.0.0 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.5763018Z   Downloading pyarrow-18.1.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+2025-01-27T07:20:32.9776742Z Collecting sqlalchemy<3,>=1.4.0 (from mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:32.9854582Z   Downloading SQLAlchemy-2.0.37-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+2025-01-27T07:20:33.0305202Z Collecting cachetools<6,>=5.0.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.0376212Z   Downloading cachetools-5.5.1-py3-none-any.whl.metadata (5.4 kB)
+2025-01-27T07:20:33.0643956Z Collecting cloudpickle<4 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.0720361Z   Downloading cloudpickle-3.1.1-py3-none-any.whl.metadata (7.1 kB)
+2025-01-27T07:20:33.1074742Z Collecting databricks-sdk<1,>=0.20.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.1147078Z   Downloading databricks_sdk-0.41.0-py3-none-any.whl.metadata (38 kB)
+2025-01-27T07:20:33.1653234Z Collecting gitpython<4,>=3.1.9 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.1727347Z   Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+2025-01-27T07:20:33.2469307Z Collecting importlib_metadata!=4.7.0,<9,>=3.7.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.2544223Z   Downloading importlib_metadata-8.6.1-py3-none-any.whl.metadata (4.7 kB)
+2025-01-27T07:20:33.2906790Z Collecting opentelemetry-api<3,>=1.9.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.2981873Z   Downloading opentelemetry_api-1.29.0-py3-none-any.whl.metadata (1.4 kB)
+2025-01-27T07:20:33.3317064Z Collecting opentelemetry-sdk<3,>=1.9.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.3392996Z   Downloading opentelemetry_sdk-1.29.0-py3-none-any.whl.metadata (1.5 kB)
+2025-01-27T07:20:33.3736425Z Collecting packaging<25 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.3812762Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-01-27T07:20:33.6363082Z Collecting protobuf<6,>=3.12.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.6437884Z   Downloading protobuf-5.29.3-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+2025-01-27T07:20:33.8009161Z Collecting pydantic<3,>=1.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.8081753Z   Downloading pydantic-2.10.6-py3-none-any.whl.metadata (30 kB)
+2025-01-27T07:20:33.8571068Z Collecting pyyaml<7,>=5.1 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.8644345Z   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-01-27T07:20:33.9067627Z Collecting requests<3,>=2.17.3 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.9142110Z   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+2025-01-27T07:20:33.9404302Z Collecting sqlparse<1,>=0.4.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.9476345Z   Downloading sqlparse-0.5.3-py3-none-any.whl.metadata (3.9 kB)
+2025-01-27T07:20:33.9767423Z Collecting typing-extensions<5,>=4.0.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:33.9841144Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-01-27T07:20:34.0174434Z Collecting python-dateutil>=2.8.2 (from pandas->-r requirements.txt (line 6))
+2025-01-27T07:20:34.0246200Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2025-01-27T07:20:34.0877401Z Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 6))
+2025-01-27T07:20:34.0949090Z   Downloading pytz-2024.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-01-27T07:20:34.1192353Z Collecting tzdata>=2022.7 (from pandas->-r requirements.txt (line 6))
+2025-01-27T07:20:34.1266096Z   Downloading tzdata-2025.1-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-01-27T07:20:34.1825128Z Collecting Mako (from alembic!=1.10.0,<2->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.1898879Z   Downloading Mako-1.3.8-py3-none-any.whl.metadata (2.9 kB)
+2025-01-27T07:20:34.2543589Z Collecting urllib3>=1.26.0 (from docker<8,>=4.0.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.2614678Z   Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+2025-01-27T07:20:34.3005080Z Collecting graphql-core<3.3,>=3.1 (from graphene<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.3076404Z   Downloading graphql_core-3.2.6-py3-none-any.whl.metadata (11 kB)
+2025-01-27T07:20:34.3269202Z Collecting graphql-relay<3.3,>=3.1 (from graphene<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.3340112Z   Downloading graphql_relay-3.2.0-py3-none-any.whl.metadata (12 kB)
+2025-01-27T07:20:34.4162989Z Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->flask->-r requirements.txt (line 1))
+2025-01-27T07:20:34.4237314Z   Downloading MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-01-27T07:20:34.5057213Z Collecting contourpy>=1.0.1 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.5130793Z   Downloading contourpy-1.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.4 kB)
+2025-01-27T07:20:34.5382660Z Collecting cycler>=0.10 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.5461490Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2025-01-27T07:20:34.7532691Z Collecting fonttools>=4.22.0 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.7611997Z   Downloading fonttools-4.55.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (166 kB)
+2025-01-27T07:20:34.8530182Z Collecting kiwisolver>=1.3.1 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:34.8606281Z   Downloading kiwisolver-1.4.8-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (6.2 kB)
+2025-01-27T07:20:35.0817191Z Collecting pillow>=8 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.0893212Z   Downloading pillow-11.1.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2025-01-27T07:20:35.1340466Z Collecting pyparsing>=2.3.1 (from matplotlib<4->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.1413562Z   Downloading pyparsing-3.2.1-py3-none-any.whl.metadata (5.0 kB)
+2025-01-27T07:20:35.1675168Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 6))
+2025-01-27T07:20:35.1753589Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-01-27T07:20:35.3376741Z Collecting greenlet!=0.4.17 (from sqlalchemy<3,>=1.4.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.3450325Z   Downloading greenlet-3.1.1-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2025-01-27T07:20:35.4645996Z Collecting google-auth~=2.0 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.4718565Z   Downloading google_auth-2.38.0-py2.py3-none-any.whl.metadata (4.8 kB)
+2025-01-27T07:20:35.5072444Z Collecting gitdb<5,>=4.0.1 (from gitpython<4,>=3.1.9->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.5146126Z   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+2025-01-27T07:20:35.5562308Z Collecting zipp>=3.20 (from importlib_metadata!=4.7.0,<9,>=3.7.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.5634094Z   Downloading zipp-3.21.0-py3-none-any.whl.metadata (3.7 kB)
+2025-01-27T07:20:35.5963642Z Collecting deprecated>=1.2.6 (from opentelemetry-api<3,>=1.9.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.6034044Z   Downloading Deprecated-1.2.17-py2.py3-none-any.whl.metadata (5.7 kB)
+2025-01-27T07:20:35.6199529Z Collecting importlib_metadata!=4.7.0,<9,>=3.7.0 (from mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.6272872Z   Downloading importlib_metadata-8.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-01-27T07:20:35.7302863Z Collecting opentelemetry-semantic-conventions==0.50b0 (from opentelemetry-sdk<3,>=1.9.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.7375801Z   Downloading opentelemetry_semantic_conventions-0.50b0-py3-none-any.whl.metadata (2.3 kB)
+2025-01-27T07:20:35.7663715Z Collecting annotated-types>=0.6.0 (from pydantic<3,>=1.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:35.7737999Z   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-01-27T07:20:36.5267520Z Collecting pydantic-core==2.27.2 (from pydantic<3,>=1.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.5346908Z   Downloading pydantic_core-2.27.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+2025-01-27T07:20:36.6429558Z Collecting charset-normalizer<4,>=2 (from requests<3,>=2.17.3->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.6510418Z   Downloading charset_normalizer-3.4.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+2025-01-27T07:20:36.6756479Z Collecting idna<4,>=2.5 (from requests<3,>=2.17.3->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.6827712Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-01-27T07:20:36.7211198Z Collecting certifi>=2017.4.17 (from requests<3,>=2.17.3->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.7281210Z   Downloading certifi-2024.12.14-py3-none-any.whl.metadata (2.3 kB)
+2025-01-27T07:20:36.8590331Z Collecting wrapt<2,>=1.10 (from deprecated>=1.2.6->opentelemetry-api<3,>=1.9.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.8667443Z   Downloading wrapt-1.17.2-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+2025-01-27T07:20:36.8876867Z Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython<4,>=3.1.9->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.8948865Z   Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+2025-01-27T07:20:36.9308236Z Collecting pyasn1-modules>=0.2.1 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.9380237Z   Downloading pyasn1_modules-0.4.1-py3-none-any.whl.metadata (3.5 kB)
+2025-01-27T07:20:36.9630428Z Collecting rsa<5,>=3.1.4 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:36.9700593Z   Downloading rsa-4.9-py3-none-any.whl.metadata (4.2 kB)
+2025-01-27T07:20:37.0094486Z Collecting pyasn1<0.7.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.20.0->mlflow->-r requirements.txt (line 5))
+2025-01-27T07:20:37.0164709Z   Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+2025-01-27T07:20:37.0415474Z Downloading flask-3.1.0-py3-none-any.whl (102 kB)
+2025-01-27T07:20:37.0566708Z Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+2025-01-27T07:20:37.0845974Z Downloading numpy-2.2.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.4 MB)
+2025-01-27T07:20:37.3907464Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 55.6 MB/s eta 0:00:00
+2025-01-27T07:20:37.3987666Z Downloading scikit_learn-1.6.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
+2025-01-27T07:20:37.4944477Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 143.9 MB/s eta 0:00:00
+2025-01-27T07:20:37.5047809Z Downloading mlflow-2.20.0-py3-none-any.whl (28.3 MB)
+2025-01-27T07:20:37.6538999Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.3/28.3 MB 191.9 MB/s eta 0:00:00
+2025-01-27T07:20:37.6620398Z Downloading mlflow_skinny-2.20.0-py3-none-any.whl (6.0 MB)
+2025-01-27T07:20:37.6999141Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 162.9 MB/s eta 0:00:00
+2025-01-27T07:20:37.7079516Z Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+2025-01-27T07:20:37.7737244Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 203.3 MB/s eta 0:00:00
+2025-01-27T07:20:37.7813237Z Downloading alembic-1.14.1-py3-none-any.whl (233 kB)
+2025-01-27T07:20:37.7941466Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2025-01-27T07:20:37.8043221Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-01-27T07:20:37.8147270Z Downloading docker-7.1.0-py3-none-any.whl (147 kB)
+2025-01-27T07:20:37.8246889Z Downloading graphene-3.4.3-py2.py3-none-any.whl (114 kB)
+2025-01-27T07:20:37.8384376Z Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+2025-01-27T07:20:37.8496462Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2025-01-27T07:20:37.8610699Z Downloading jinja2-3.1.5-py3-none-any.whl (134 kB)
+2025-01-27T07:20:37.8743634Z Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+2025-01-27T07:20:37.8861027Z Downloading matplotlib-3.10.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+2025-01-27T07:20:37.9430527Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 155.9 MB/s eta 0:00:00
+2025-01-27T07:20:37.9538261Z Downloading pyarrow-18.1.0-cp310-cp310-manylinux_2_28_x86_64.whl (40.1 MB)
+2025-01-27T07:20:38.1749457Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 MB 182.4 MB/s eta 0:00:00
+2025-01-27T07:20:38.1854523Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-01-27T07:20:38.1966200Z Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+2025-01-27T07:20:38.2112376Z Downloading scipy-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (40.6 MB)
+2025-01-27T07:20:38.4211584Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.6/40.6 MB 195.3 MB/s eta 0:00:00
+2025-01-27T07:20:38.4292657Z Downloading SQLAlchemy-2.0.37-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+2025-01-27T07:20:38.4507010Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 153.2 MB/s eta 0:00:00
+2025-01-27T07:20:38.4583500Z Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+2025-01-27T07:20:38.4732459Z Downloading tzdata-2025.1-py2.py3-none-any.whl (346 kB)
+2025-01-27T07:20:38.4843263Z Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+2025-01-27T07:20:38.4960715Z Downloading cachetools-5.5.1-py3-none-any.whl (9.5 kB)
+2025-01-27T07:20:38.5067876Z Downloading cloudpickle-3.1.1-py3-none-any.whl (20 kB)
+2025-01-27T07:20:38.5211539Z Downloading contourpy-1.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (324 kB)
+2025-01-27T07:20:38.5345897Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2025-01-27T07:20:38.5441713Z Downloading databricks_sdk-0.41.0-py3-none-any.whl (637 kB)
+2025-01-27T07:20:38.5522671Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 637.5/637.5 kB 69.3 MB/s eta 0:00:00
+2025-01-27T07:20:38.5597617Z Downloading fonttools-4.55.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+2025-01-27T07:20:38.5858859Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 186.5 MB/s eta 0:00:00
+2025-01-27T07:20:38.5932633Z Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+2025-01-27T07:20:38.6040745Z Downloading graphql_core-3.2.6-py3-none-any.whl (203 kB)
+2025-01-27T07:20:38.6177397Z Downloading graphql_relay-3.2.0-py3-none-any.whl (16 kB)
+2025-01-27T07:20:38.6295201Z Downloading greenlet-3.1.1-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (599 kB)
+2025-01-27T07:20:38.6371471Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 599.5/599.5 kB 66.8 MB/s eta 0:00:00
+2025-01-27T07:20:38.6446996Z Downloading kiwisolver-1.4.8-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+2025-01-27T07:20:38.6581461Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 138.1 MB/s eta 0:00:00
+2025-01-27T07:20:38.6657156Z Downloading MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+2025-01-27T07:20:38.6754276Z Downloading opentelemetry_api-1.29.0-py3-none-any.whl (64 kB)
+2025-01-27T07:20:38.6863061Z Downloading importlib_metadata-8.5.0-py3-none-any.whl (26 kB)
+2025-01-27T07:20:38.6970569Z Downloading opentelemetry_sdk-1.29.0-py3-none-any.whl (118 kB)
+2025-01-27T07:20:38.7085429Z Downloading opentelemetry_semantic_conventions-0.50b0-py3-none-any.whl (166 kB)
+2025-01-27T07:20:38.7193959Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-01-27T07:20:38.7297338Z Downloading pillow-11.1.0-cp310-cp310-manylinux_2_28_x86_64.whl (4.5 MB)
+2025-01-27T07:20:38.7592269Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 158.4 MB/s eta 0:00:00
+2025-01-27T07:20:38.7670742Z Downloading protobuf-5.29.3-cp38-abi3-manylinux2014_x86_64.whl (319 kB)
+2025-01-27T07:20:38.7796168Z Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
+2025-01-27T07:20:38.7923514Z Downloading pydantic_core-2.27.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2025-01-27T07:20:38.8079919Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 133.5 MB/s eta 0:00:00
+2025-01-27T07:20:38.8154142Z Downloading pyparsing-3.2.1-py3-none-any.whl (107 kB)
+2025-01-27T07:20:38.8269103Z Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+2025-01-27T07:20:38.8348119Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 kB 91.0 MB/s eta 0:00:00
+2025-01-27T07:20:38.8421483Z Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+2025-01-27T07:20:38.8530300Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-01-27T07:20:38.8636181Z Downloading sqlparse-0.5.3-py3-none-any.whl (44 kB)
+2025-01-27T07:20:38.8739944Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-01-27T07:20:38.8848031Z Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+2025-01-27T07:20:38.8949550Z Downloading Mako-1.3.8-py3-none-any.whl (78 kB)
+2025-01-27T07:20:38.9050540Z Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-01-27T07:20:38.9150441Z Downloading certifi-2024.12.14-py3-none-any.whl (164 kB)
+2025-01-27T07:20:38.9258612Z Downloading charset_normalizer-3.4.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (146 kB)
+2025-01-27T07:20:38.9358016Z Downloading Deprecated-1.2.17-py2.py3-none-any.whl (9.1 kB)
+2025-01-27T07:20:38.9474526Z Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+2025-01-27T07:20:38.9643000Z Downloading google_auth-2.38.0-py2.py3-none-any.whl (210 kB)
+2025-01-27T07:20:38.9756176Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-01-27T07:20:38.9864696Z Downloading zipp-3.21.0-py3-none-any.whl (9.6 kB)
+2025-01-27T07:20:38.9968081Z Downloading pyasn1_modules-0.4.1-py3-none-any.whl (181 kB)
+2025-01-27T07:20:39.0074983Z Downloading rsa-4.9-py3-none-any.whl (34 kB)
+2025-01-27T07:20:39.0193787Z Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+2025-01-27T07:20:39.0297078Z Downloading wrapt-1.17.2-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (82 kB)
+2025-01-27T07:20:39.0413271Z Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+2025-01-27T07:20:39.5439303Z Installing collected packages: pytz, zipp, wrapt, urllib3, tzdata, typing-extensions, threadpoolctl, sqlparse, smmap, six, pyyaml, pyparsing, pyasn1, pyarrow, protobuf, pillow, packaging, numpy, MarkupSafe, markdown, kiwisolver, joblib, itsdangerous, idna, greenlet, graphql-core, fonttools, cycler, cloudpickle, click, charset-normalizer, certifi, cachetools, blinker, annotated-types, Werkzeug, sqlalchemy, scipy, rsa, requests, python-dateutil, pydantic-core, pyasn1-modules, Mako, Jinja2, importlib_metadata, gunicorn, graphql-relay, gitdb, deprecated, contourpy, scikit-learn, pydantic, pandas, opentelemetry-api, matplotlib, graphene, google-auth, gitpython, flask, docker, alembic, opentelemetry-semantic-conventions, databricks-sdk, opentelemetry-sdk, mlflow-skinny, mlflow
+2025-01-27T07:20:59.8280401Z Successfully installed Jinja2-3.1.5 Mako-1.3.8 MarkupSafe-3.0.2 Werkzeug-3.1.3 alembic-1.14.1 annotated-types-0.7.0 blinker-1.9.0 cachetools-5.5.1 certifi-2024.12.14 charset-normalizer-3.4.1 click-8.1.8 cloudpickle-3.1.1 contourpy-1.3.1 cycler-0.12.1 databricks-sdk-0.41.0 deprecated-1.2.17 docker-7.1.0 flask-3.1.0 fonttools-4.55.6 gitdb-4.0.12 gitpython-3.1.44 google-auth-2.38.0 graphene-3.4.3 graphql-core-3.2.6 graphql-relay-3.2.0 greenlet-3.1.1 gunicorn-23.0.0 idna-3.10 importlib_metadata-8.5.0 itsdangerous-2.2.0 joblib-1.4.2 kiwisolver-1.4.8 markdown-3.7 matplotlib-3.10.0 mlflow-2.20.0 mlflow-skinny-2.20.0 numpy-2.2.2 opentelemetry-api-1.29.0 opentelemetry-sdk-1.29.0 opentelemetry-semantic-conventions-0.50b0 packaging-24.2 pandas-2.2.3 pillow-11.1.0 protobuf-5.29.3 pyarrow-18.1.0 pyasn1-0.6.1 pyasn1-modules-0.4.1 pydantic-2.10.6 pydantic-core-2.27.2 pyparsing-3.2.1 python-dateutil-2.9.0.post0 pytz-2024.2 pyyaml-6.0.2 requests-2.32.3 rsa-4.9 scikit-learn-1.6.1 scipy-1.15.1 six-1.17.0 smmap-5.0.2 sqlalchemy-2.0.37 sqlparse-0.5.3 threadpoolctl-3.5.0 typing-extensions-4.12.2 tzdata-2025.1 urllib3-2.3.0 wrapt-1.17.2 zipp-3.21.0
+2025-01-27T07:20:59.9591739Z 
+2025-01-27T07:20:59.9592195Z [notice] A new release of pip is available: 24.3.1 -> 25.0
+2025-01-27T07:20:59.9592641Z [notice] To update, run: pip install --upgrade pip
+2025-01-27T07:21:00.6471318Z ##[group]Run python -m unittest discover -s src/test/unit_test -p "*.py"
+2025-01-27T07:21:00.6471834Z [36;1mpython -m unittest discover -s src/test/unit_test -p "*.py"[0m
+2025-01-27T07:21:00.6501148Z shell: /usr/bin/bash -e {0}
+2025-01-27T07:21:00.6501375Z env:
+2025-01-27T07:21:00.6501623Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:21:00.6502021Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-01-27T07:21:00.6502419Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:21:00.6502765Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:21:00.6503120Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-01-27T07:21:00.6503462Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-01-27T07:21:00.6503748Z ##[endgroup]
+2025-01-27T07:21:02.9793991Z /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator SVC from version 1.3.0 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-01-27T07:21:02.9797062Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-01-27T07:21:02.9797669Z   warnings.warn(
+2025-01-27T07:21:02.9807774Z /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but SVC was fitted with feature names
+2025-01-27T07:21:02.9808780Z   warnings.warn(
+2025-01-27T07:21:02.9812991Z ./opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but SVC was fitted with feature names
+2025-01-27T07:21:02.9814294Z   warnings.warn(
+2025-01-27T07:21:02.9930772Z ..
+2025-01-27T07:21:02.9931189Z ----------------------------------------------------------------------
+2025-01-27T07:21:02.9931706Z Ran 3 tests in 0.011s
+2025-01-27T07:21:02.9931917Z 
+2025-01-27T07:21:02.9932032Z OK
+2025-01-27T07:21:02.9932530Z MockModel trained. Best Parameters: {'param1': 'value1'}, Test Accuracy: 0.75
+2025-01-27T07:21:03.2342781Z Post job cleanup.
+2025-01-27T07:21:03.3504775Z Post job cleanup.
+2025-01-27T07:21:03.4208055Z [command]/usr/bin/git version
+2025-01-27T07:21:03.4244449Z git version 2.48.1
+2025-01-27T07:21:03.4287526Z Temporarily overriding HOME='/home/runner/work/_temp/34a4cfd3-f525-4f8a-b99a-29795bba3d0d' before making global git config changes
+2025-01-27T07:21:03.4288854Z Adding repository directory to the temporary git global config as a safe directory
+2025-01-27T07:21:03.4292631Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ml-ops-grp39-assignment-1/ml-ops-grp39-assignment-1
+2025-01-27T07:21:03.4324230Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-01-27T07:21:03.4354090Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-01-27T07:21:03.4590534Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-01-27T07:21:03.4610462Z http.https://github.com/.extraheader
+2025-01-27T07:21:03.4621267Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-01-27T07:21:03.4650222Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-01-27T07:21:03.4975670Z Cleaning up orphan processes

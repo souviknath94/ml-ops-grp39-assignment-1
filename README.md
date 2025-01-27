@@ -87,6 +87,48 @@ docker rm mlops-app
 
 This project uses GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD). The pipeline is defined in the `ci.yaml` file located in `.github/workflows/`.
 
+## CI/CD Pipeline Execution Summary
+The CI/CD pipeline automates code linting, unit testing, and deployment using GitHub Actions. Below is a detailed breakdown of each step's execution as observed from the logs.
+
+### 1. Lint Code
+- **Purpose**: To ensure code quality and adherence to Python coding standards.
+- **Log Highlights**:
+  - The pipeline successfully executed `flake8` to lint the code.
+  - Any warnings or style violations were logged but didn't fail the pipeline.
+  - Example Log Snippet:
+    ```text
+    2025-01-27T07:19:47.6281378Z Linting complete. No errors found.
+    ```
+
+### 2. Run Unit Tests
+- **Purpose**: To validate the functionality of the code using unit tests.
+- **Log Highlights**:
+  - Python `unittest` was executed, and all tests passed successfully.
+  - Example Log Snippet:
+    ```text
+    2025-01-27T07:20:28.7679664Z All unit tests executed successfully.
+    2025-01-27T07:20:29.0226480Z No test failures encountered.
+    ```
+
+### 3. Deploy and Test Application
+- **Purpose**: To deploy the application in a Docker container and verify it using a `curl` command.
+- **Log Highlights**:
+  - Docker container built successfully.
+  - Application tested with a `curl` request, and a successful prediction response was received.
+  - Example Log Snippet:
+    ```text
+    2025-01-27T07:21:11.7340928Z Docker container running on port 5000.
+    2025-01-27T07:21:12.2581357Z Prediction response: {"prediction": 2}
+    ```
+
+## Logs and Outputs
+
+- [View Linting CI/CD Logs](logs/0_Lint Code.txt)
+- [View Unit testing CI/CD Logs](logs/1_Run Unit Tests.txt)
+- [View Deployment CI/CD Logs](logs/2_Deploy and Test Application.txt)
+---
+
+
 ### Pipeline Steps
 
 #### 1. Lint Code
@@ -198,9 +240,6 @@ Automating testing, building, and deployment using GitHub Actions ensures that t
 - **Linting**: Helps maintain code quality.
 - **Unit Testing**: Ensures functionality is working as intended.
 - **Deployment and Testing**: Deploying in a Dockerized environment mirrors production setups, ensuring reliability.
-
-### 6. **Manual Port Forwarding**
-The use of manual port forwarding in deployment provides flexibility for public testing, especially when running on local or development environments.
 
 ### 7. **Separation of Concerns**
 Each step in the CI/CD pipeline is modularized to ensure clarity, maintainability, and easier debugging.
