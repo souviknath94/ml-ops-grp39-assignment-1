@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/psengupta/MLOPs/ml-ops-grp39-assignment-1/mlruns/950556412206111824/e7f5841331424d709596a3a1a9fb458d/artifacts
+end_time: 1737791028359
+entry_point_name: ''
+experiment_id: '950556412206111824'
+lifecycle_stage: active
+run_id: e7f5841331424d709596a3a1a9fb458d
+run_name: puzzled-gnat-226
+run_uuid: e7f5841331424d709596a3a1a9fb458d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737791022202
+status: 3
+tags: []
+user_id: psengupta

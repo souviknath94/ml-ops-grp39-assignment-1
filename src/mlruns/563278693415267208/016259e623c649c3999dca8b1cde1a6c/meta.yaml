@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Bidisha/ml-ops-grp39-assignment-1/src/mlruns/563278693415267208/016259e623c649c3999dca8b1cde1a6c/artifacts
+end_time: 1737658867114
+entry_point_name: ''
+experiment_id: '563278693415267208'
+lifecycle_stage: active
+run_id: 016259e623c649c3999dca8b1cde1a6c
+run_name: welcoming-fawn-754
+run_uuid: 016259e623c649c3999dca8b1cde1a6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737658859055
+status: 3
+tags: []
+user_id: Bidisha

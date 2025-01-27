@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Bidisha/ml-ops-grp39-assignment-1/src/mlruns/563278693415267208/02399e1dfccc4cfebb405d22294d0bf5/artifacts
+end_time: 1737658859004
+entry_point_name: ''
+experiment_id: '563278693415267208'
+lifecycle_stage: active
+run_id: 02399e1dfccc4cfebb405d22294d0bf5
+run_name: welcoming-ray-876
+run_uuid: 02399e1dfccc4cfebb405d22294d0bf5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737658849469
+status: 3
+tags: []
+user_id: Bidisha

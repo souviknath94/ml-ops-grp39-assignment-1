@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Bidisha/ml-ops-grp39-assignment-1/src/mlruns/563278693415267208/ddf949a8fe5e449cb84856ca321ea218/artifacts
+end_time: 1737655066267
+entry_point_name: ''
+experiment_id: '563278693415267208'
+lifecycle_stage: active
+run_id: ddf949a8fe5e449cb84856ca321ea218
+run_name: glamorous-grub-580
+run_uuid: ddf949a8fe5e449cb84856ca321ea218
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737655042247
+status: 3
+tags: []
+user_id: Bidisha

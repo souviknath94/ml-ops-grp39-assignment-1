@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Bidisha/ml-ops-grp39-assignment-1/src/mlruns/563278693415267208/409074a468e04f748af580fbc2c4655e/artifacts
+end_time: 1737654406532
+entry_point_name: ''
+experiment_id: '563278693415267208'
+lifecycle_stage: active
+run_id: 409074a468e04f748af580fbc2c4655e
+run_name: valuable-hog-26
+run_uuid: 409074a468e04f748af580fbc2c4655e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737654366667
+status: 3
+tags: []
+user_id: Bidisha
